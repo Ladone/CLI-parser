@@ -1,0 +1,16 @@
+{
+    "name": "ladone/cli-parser",
+    "authors": [
+        {
+            "name": "Vladislav Pototskiy",
+            "email": "pototskiyvl@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+       "psr-4": {
+          "LParser\\": "src/"
+       }
+    }
+
+}
