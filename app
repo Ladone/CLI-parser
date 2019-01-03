@@ -3,6 +3,8 @@
 
 require_once('./vendor/autoload.php');
 
-$cmdHelp = new LParser\Command\Help();
+use LParser\CommandListener;
 
-$cmdHelp->run();
+$cl = new CommandListener();
+
+$cl->listen($argv);

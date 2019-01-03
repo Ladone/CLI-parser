@@ -24,11 +24,12 @@ class CommandHelper
      * @param $name
      * @param $description
      */
-    public function addCommand ($command, $shortCommand, $name, $description) {
+    public function addCommand ($command, $shortCommand, $args, $name, $description) {
         array_push($this->_commands,
             [
                 'command'       => $command,
                 'short_command' => $shortCommand,
+                'args'          => $args,
                 'name'          => $name,
                 'description'   => $description
             ]
@@ -50,8 +51,11 @@ class CommandHelper
                     case "short_command":
                         $normalizedCommand .= sprintf("-%s ", $value);
                     break;
+                    case "args":
+                        $normalizedCommand .= sprintf("args (%s)", $value);
+                    break;
                     case "name":
-                        $normalizedCommand .= sprintf("%50s ", $value);
+                        $normalizedCommand .= sprintf("%20s ", $value);
                     break;
                     case "description":
                         $normalizedCommand .= sprintf("%s\n", $value);

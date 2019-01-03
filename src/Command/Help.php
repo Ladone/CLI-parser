@@ -16,7 +16,7 @@ class Help implements ICommand
     public function run($args = null)
     {
         $commandHelper = new CommandHelper();
-        $commandHelper->addCommand('help', 'h', 'Help', 'Show this help');
+        $commandHelper->addCommand('help', 'h', '', 'Help', 'Show this help');
         $commandHelper->getList();
     }
 }
