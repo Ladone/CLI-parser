@@ -11,6 +11,7 @@ namespace LParser\Prototype;
 
 interface ICommandListener
 {
+    public function __construct(Array $config);
     public function listen($argv);
     public function run($cmd);
 }

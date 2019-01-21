@@ -16,11 +16,20 @@ use LParser\Command\Help;
 class CommandListener implements ICommandListener
 {
 
+    // config
+    private $_config;
+
+    // init object
+    public function __construct(Array $config)
+    {
+        $this->_config = $config;
+    }
+
     /**
      * @param $argv
      */
     public function listen($argv) {
-        $parse = new Parse();
+        $parse = new Parse($this->_config);
         $parse->run($argv);
     }
 
